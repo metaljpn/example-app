@@ -1,14 +1,11 @@
+import vueCounter from "./vueCounter";
 import { createApp } from "vue/dist/vue.esm-bundler";
-const Counter = {
-  data() {
+createApp({
+  setup() {
+    // カウンターを更新する
+    const { counter } = vueCounter();
     return {
-      counter: 0,
+      counter,
     };
   },
-  mounted() {
-    setInterval(() => {
-      this.counter++;
-    }, 1000);
-  },
-};
-createApp(Counter).mount("#counter");
+}).mount("#counter");
