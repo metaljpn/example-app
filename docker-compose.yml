@@ -102,6 +102,7 @@ services:
             - sail
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
+        platform: linux/amd64
         links:
           - mysql:mysql
         ports:
